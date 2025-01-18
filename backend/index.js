@@ -17,6 +17,8 @@ app.use(cors({
   allowedHeaders: ['Content-Type'], // Allow specific headers
 }));
 
+app.options('*', cors());  // Respond to preflight requests
+
 
 
 app.get("/home",(req,res)=>{
