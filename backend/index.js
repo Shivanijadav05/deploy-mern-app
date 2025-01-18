@@ -15,7 +15,8 @@ app.use(cors({
   origin: 'https://deploy-mern-app-uiii.vercel.app', // Frontend URL
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed HTTP methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allowed request headers
-  credentials: true // If cookies or credentials are sent
+  credentials: true ,// If cookies or credentials are sent
+  optionSuccessStatus:200
 }));
 
 // Handle preflight requests globally
