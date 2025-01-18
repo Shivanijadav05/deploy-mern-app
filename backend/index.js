@@ -10,31 +10,19 @@ require("./models/db")
 
 const PORT=process.env.PORT || 4000;
 
-app.use((req, res, next) => {
-    if (req.method === 'OPTIONS') {
-        console.log('Handling preflight request:', req.headers);
-    }
-    next();
-});
+
 
 app.use(bodyParser.json());
 app.use(cors({
-  origin: 'https://deploy-mern-app-uiii.vercel.app', // Frontend URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed HTTP methods
+  origin: [`https://deploy-mern-app-uiii.vercel.app`], // Frontend URL
+  methods: ['GET', 'POST'], // Allowed HTTP methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allowed request headers
   credentials: true ,// If cookies or credentials are sent
   optionSuccessStatus:200
 }));
 
-// Handle preflight requests globally
-app.options('*', (req, res) => {
-  res.set({
-    'Access-Control-Allow-Origin': 'https://deploy-mern-app-uiii.vercel.app',
-    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-  });
-  res.status(204).end();
-});
+
+
 
 
 
