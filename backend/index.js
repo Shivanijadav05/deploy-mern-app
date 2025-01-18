@@ -21,6 +21,18 @@ app.use(cors({
   optionSuccessStatus:200
 }));
 
+ app.use((req, res, next) => {
+res.setHeader('Access-Control-Allow-Origin', 'https://deploy-mern-app-uiii.vercel.app');
+res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+res.setHeader('Access-Control-Allow-Credentials', 'true'); // Optional: For cookies/auth
+    });
+ app.options('/auth/login', (req, res) => {
+      res.header('Access-Control-Allow-Origin', 'https://deploy-mern-app-uiii.vercel.app');
+      res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+      res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+      res.send();
+    });
 
 
 
