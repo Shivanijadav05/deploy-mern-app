@@ -26,7 +26,7 @@ app.get("/home",(req,res)=>{
 })
 
 app.use('/auth',authrouter);
-app.use('/auth',productrouter);
+app.use('/products',productrouter);
 
 app.listen(PORT,()=>{
     console.log("server running");
