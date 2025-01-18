@@ -11,13 +11,8 @@ require("./models/db")
 const PORT=process.env.PORT || 4000;
 
 app.use(bodyParser.json());
-app.use(cors({
-  origin: 'https://deploy-mern-app-uiii.vercel.app', // Frontend URL
-  methods: ['GET', 'POST', 'OPTIONS'], // Allow specific HTTP methods
-  allowedHeaders: ['Content-Type'], // Allow specific headers
-}));
+app.use(cors());
 
-app.options('*', cors());  // Respond to preflight requests
 
 
 
