@@ -14,7 +14,7 @@ function App() {
   }
   return (
     <div className="App">
-    <RefrshHandler setIsAuthenticated={setIsAuthenticated} /
+    <RefrshHandler setIsAuthenticated={setIsAuthenticated} />
       <Routes>
       <Route path='/' element={<Navigate to={'/login'}/>}/>
       <Route path='/login' element={<Login/>}/>
