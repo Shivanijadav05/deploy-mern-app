@@ -42,7 +42,7 @@ function Signup(){
                 handleSuccess(message);
                 setTimeout(()=>{
                     navigate('/login')
-                },1000)
+                },500)
             }
             else if(error)
             {
